@@ -49,9 +49,6 @@
 ## 📄 License
 Distributed under the GNU AFFERO GENERAL PUBLIC License. See [LICENSE](/LICENSE)
 for more information.
-
-## AMV CREDIT :- https://youtu.be/_jP9uKKG7ks
-
 ## 🎗Help
 Please give this repo a ⭐ if it helped you.
  
