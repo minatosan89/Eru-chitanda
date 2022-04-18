@@ -94,12 +94,13 @@ export default class MessageHandler {
 				groupMetadata?.subject || "DM"
 			)}`
 		   );
+		   if (M.quoted?.sender) M.mentioned.push(M.quoted.sender);
 			if (!command)
-			return void M.reply( await request.buffer(`https://c.tenor.com/uPVJO4UsB0MAAAPo/yotsuba-nakano-laugh.mp4`),
+			return void M.reply( await request.buffer(`https://c.tenor.com/Uhi10UixVYoAAAPo/yotsuba-gotoubun.mp4`),
                     MessageType.video,
                     Mimetype.gif,
                     undefined,
-                    `No such command, Baka! Have you never seen someone use the command *${this.client.config.prefix}help*`,
+                    `*${M.sender.username}* You are using wrong command kindly use *${this.client.config.prefix}help* for right commands`,
                     undefined
                 )
 		const user = await this.client.getUser(M.sender.jid);
