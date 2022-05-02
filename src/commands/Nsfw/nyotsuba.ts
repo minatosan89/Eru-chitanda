@@ -13,7 +13,7 @@ export default class Command extends BaseCommand {
 			command: "nsfwyotsuba",
 			description: `Will send you random 18+ Yotsuba image.`,
 			aliases: ["nyotsuba"],
-			category: "weeb",
+			category: "nsfw",
 			usage: `${client.config.prefix}nsfwyotsuba `,
 			baseXp: 50,
 		});
