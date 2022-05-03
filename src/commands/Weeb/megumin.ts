@@ -22,6 +22,16 @@ export default class Command extends BaseCommand {
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // fetch result of https://api.waifu.pics/sfw/megumin from the API using axios
         const { data } = await axios.get('https://api.waifu.pics/sfw/megumin')
+        const user = M.mentioned[0] ? M.mentioned[0] : M.sender.jid
+        let username = user === M.sender.jid ? M.sender.username : "";
+				if (!username) {
+					const contact = this.client.getContact(user);
+					username =
+						contact.notify ||
+						contact.vname ||
+						contact.name ||
+						user.split("@")[0];
+				}
         const buffer = await request.buffer(data.url).catch((e) => {
             return void M.reply(e.message)
         })
@@ -32,7 +42,7 @@ export default class Command extends BaseCommand {
                     MessageType.image,
                     undefined,
                     undefined,
-                    `*Simp proved ✌️*\n`,
+                    `*${username} Lol you got caught while simping ✌️*\n`,
                     undefined
                 ).catch((e) => {
                     console.log(`This Error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
