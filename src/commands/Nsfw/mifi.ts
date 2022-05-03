@@ -24,14 +24,28 @@ export default class Command extends BaseCommand {
          return void M.reply(
         `Don't be a pervert, Baka! This is not an NSFW group.`
          );
-        // fetch result of https://velgrynd.herokuapp.com/api/randomimage/milf?apikey=Kuxw2RRu from the API using axios
-        return void M.reply( await request.buffer(`https://velgrynd.herokuapp.com/api/randomimage/milf?apikey=jxhcCGrCtIavLMAe6JY8xrwTX`),
-        MessageType.image,
-                    undefined,
-                    undefined,
-                    `🌟 Here you go.\n`,
+        const { data } = await axios.get(`http://gg.gg/10xzpa`)
+        const buffer = await request.buffer(data.images[0].url).catch((e) => {
+            return void M.reply(e.message)
+        })
+        while (true) {
+            try {
+                M.reply(
+                    buffer || 'Could not fetch image. Please try again later',
+                    MessageType.image,
                     undefined
-                ).catch((reason: any) =>
-            M.reply(`✖ An error occurred. Please try again later.`))
+                ).catch((e) => {
+                    console.log(`This Error occurs when an image is sent via M.reply()\n Child Catch Block : \n${e}`)
+                    // console.log('Failed')
+                    M.reply(`Could not fetch image. Here's the URL: ${data.images[0].url}`)
+                })
+                break
+            } catch (e) {
+                // console.log('Failed2')
+                M.reply(`Could not fetch image. Here's the URL : ${data.images[0].url}`)
+                console.log(`This Error occurs when an image is sent via M.reply()\n Parent Catch Block : \n${e}`)
+            }
+        }
+        return void null
     }
 }
