@@ -21,12 +21,12 @@ export default class Command extends BaseCommand {
 
     run = async (M: ISimplifiedMessage): Promise<void> => {
         // fetch result of https://nekos.life/api/v2/img/ero from the API using axios
-        const { data } = await axios.get('https://nekos.life/api/v2/img/ero')
+        const { data } = await axios.get('https://api.waifu.im/random/?selected_tags=ero')
         if ( !(await this.client.getGroupData(M.from)).nsfw)
             return void M.reply(
                 `Don't be a pervert, Baka! This is not an NSFW group.`
             )
-        const buffer = await request.buffer(data.url).catch((e) => {
+        const buffer = await request.buffer(data.images[0].url).catch((e) => {
             return void M.reply(e.message)
         })
         while (true) {
@@ -53,3 +53,4 @@ export default class Command extends BaseCommand {
         return void null
     }
 }
+
