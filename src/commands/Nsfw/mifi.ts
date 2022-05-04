@@ -24,7 +24,7 @@ export default class Command extends BaseCommand {
          return void M.reply(
         `Don't be a pervert, Baka! This is not an NSFW group.`
          );
-        const { data } = await axios.get(`http://gg.gg/10xzpa`)
+        const { data } = await axios.get(`https://api.waifu.im/random/?selected_tags=milf`)
         const buffer = await request.buffer(data.images[0].url).catch((e) => {
             return void M.reply(e.message)
         })
