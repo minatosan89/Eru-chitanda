@@ -1,6 +1,6 @@
 {
     
-  "name": "Yotsuba",
+  "name": "Chitanda",
   "description": "A WhatsApp Bot With Rich NSFW Features based on chitoge.",
   "keywords": [
       "bot",
@@ -14,7 +14,7 @@
   ],
   "website": "https://github.com/ShinNouzen/Chitoge#readme",
   "repository": "https://github.com//Whatup364/Chitoge.git",
-  "logo": "https://i.pinimg.com/736x/71/c2/8e/71c28e4ffd58c60aceacffab60db14cc.jpg",
+  "logo": "https://images6.fanpop.com/image/photos/35000000/Eru-Chitanda-hyouka-35029036-1280-720.jpg",
   "success_url": "/",
   "env": {
       "PREFIX": {
