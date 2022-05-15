@@ -43,11 +43,13 @@ export default class Command extends BaseCommand {
           categories[info.config.category].push(info);
         }
       }
-      let text = `👋🏻 (💙ω💙) Konichiwa! *@${
-        user.split("@")[0]
-      }*, I'm Chitoge.\n\nMy prefix is - "${
-        this.client.config.prefix
-      }"\n\nThe usable commands are listed below.\n\n`;
+      let text = `
+      ─「(づ￣ 3￣)づ」
+│⋊ 𝕌𝕤𝕖𝕣: *${M.sender.username}*
+│⋊ ℕ𝕒𝕞𝕖: ★彡[ᴇʀᴜ ᴄʜɪᴛᴀɴᴅᴀ]彡★
+│⋊ ℙ𝕣𝕖𝕗𝕚𝕩: ${this.client.config.prefix}
+│⋊ 𝕆𝕨𝕟𝕖𝕣: *ᎷＩN么ᎢＯ⁴⚡*
+╰────────────┈平和                            \n\n`
       const keys = Object.keys(categories);
       for (const key of keys)
         text += `*━━━❰ ${this.client.util.capitalize(
