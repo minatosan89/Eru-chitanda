@@ -96,7 +96,7 @@ export default class MessageHandler {
 		   );
 		   if (M.quoted?.sender) M.mentioned.push(M.quoted.sender);
 			if (!command)
-			return void M.reply( await request.buffer(`https://c.tenor.com/Uhi10UixVYoAAAPo/yotsuba-gotoubun.mp4`),
+			return void M.reply( await request.buffer(`https://c.tenor.com/WzUKG2LF7uwAAAPo/hyouka-eru-chitanda.mp4`),
                     MessageType.video,
                     Mimetype.gif,
                     undefined,
